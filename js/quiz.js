@@ -1,73 +1,120 @@
-async function loadExcel() {
-  const response = await fetch('spreadsheets/questions.xlsx');
-  const arrayBuffer = await response.arrayBuffer();
-  const workbook = XLSX.read(arrayBuffer, { type: 'array' });
-  const sheetName = workbook.SheetNames[0];
-  const data = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName], { header:1 });
-  data.shift();
-  return data.map(row => ({
-    q: row[0],
-    choices: [row[1], row[2], row[3]],
-    a: ['A','B','C'].indexOf(row[4]?.trim().toUpperCase())
-  }));
-}
+const loginContainer = document.getElementById('login-container');
+const promptContainer = document.getElementById('prompt-container');
+const quizContainer = document.getElementById('quiz-container');
 
-let questions = [], index = 0, answers = [];
-const questionText = document.getElementById('questionText');
+const idInput = document.getElementById('idInput');
+const loginBtn = document.getElementById('loginBtn');
+const loginMessage = document.getElementById('loginMessage');
+
+const exitBtn = document.getElementById('exitBtn');
+const continueBtn = document.getElementById('continueBtn');
+
+const userInfo = document.getElementById('userInfo');
+const questionEl = document.getElementById('question');
 const choicesEl = document.getElementById('choices');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-const submitBtn = document.getElementById('submitBtn');
 const resultEl = document.getElementById('result');
-const scoreValue = document.getElementById('scoreValue');
-const summaryText = document.getElementById('summaryText');
-const restartBtn = document.getElementById('restartBtn');
+const liveScore = document.getElementById('liveScore');
 
-function render(){
-  const q = questions[index];
-  questionText.textContent = q.q;
-  choicesEl.innerHTML = '';
-  q.choices.forEach((c,i)=>{
-    const div = document.createElement('div');
-    div.className = 'choice';
-    div.textContent = c;
-    if(answers[index] === i) div.classList.add('selected');
-    div.onclick = () => select(i);
-    choicesEl.appendChild(div);
-  });
-  prevBtn.disabled = index===0;
-  nextBtn.disabled = index===questions.length-1;
+let users = [];
+let questions = [];
+let ads = [];
+let index = 0;
+let score = 0;
+let currentUser = null;
+
+// --- Load Excel Files ---
+async function loadUsers() {
+  const res = await fetch('spreadsheets/users.xlsx');
+  const buf = await res.arrayBuffer();
+  const wb = XLSX.read(buf, { type: 'array' });
+  users = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]);
 }
 
-function select(i){
-  answers[index] = i;
-  [...choicesEl.children].forEach(c=>c.classList.remove('selected'));
-  choicesEl.children[i].classList.add('selected');
+async function loadQuestions() {
+  const res = await fetch('spreadsheets/questions.xlsx');
+  const buf = await res.arrayBuffer();
+  const wb = XLSX.read(buf, { type: 'array' });
+  const sheet = wb.Sheets[wb.SheetNames[0]];
+  const json = XLSX.utils.sheet_to_json(sheet);
+  questions = json.map(row => ({ question: row.Question }));
 }
 
-prevBtn.onclick = ()=>{ index=Math.max(0,index-1); render(); };
-nextBtn.onclick = ()=>{ index=Math.min(questions.length-1,index+1); render(); };
-submitBtn.onclick = showResults;
-restartBtn.onclick = ()=>{
-  index=0;answers=Array(questions.length).fill(null);
-  resultEl.style.display='none';
-  document.getElementById('questionBox').style.display='';
-  document.querySelector('.controls').style.display='';
-  render();
+async function loadAds() {
+  const res = await fetch('spreadsheets/ads.xlsx');
+  const buf = await res.arrayBuffer();
+  const wb = XLSX.read(buf, { type: 'array' });
+  ads = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]);
+}
+
+// --- Login Logic ---
+loginBtn.onclick = async () => {
+  if (!users.length) await loadUsers();
+  const id = idInput.value.trim();
+  const found = users.find(u => u['ID number'] == id);
+
+  if (found) {
+    currentUser = found;
+    loginMessage.textContent = '';
+    loginContainer.style.display = 'none';
+    promptContainer.style.display = 'block';
+  } else {
+    loginMessage.textContent = '❌ Invalid ID number.';
+    loginMessage.style.color = 'red';
+  }
 };
 
-function showResults(){
-  let correct=0;
-  questions.forEach((q,i)=>{ if(answers[i]===q.a) correct++; });
-  scoreValue.textContent = `${correct} / ${questions.length}`;
-  summaryText.textContent = `You scored ${Math.round((correct/questions.length)*100)}%`;
-  document.getElementById('questionBox').style.display='none';
-  document.querySelector('.controls').style.display='none';
-  resultEl.style.display='';
+// --- Prompt Buttons ---
+exitBtn.onclick = async () => {
+  if (!ads.length) await loadAds();
+  if (!ads.length) return alert("No ads available.");
+
+  const randomAd = ads[Math.floor(Math.random() * ads.length)];
+  if (randomAd.Link) window.open(randomAd.Link, "_blank");
+};
+
+continueBtn.onclick = async () => {
+  promptContainer.style.display = 'none';
+  quizContainer.style.display = 'block';
+  userInfo.textContent = `Welcome, ${currentUser['FULL NAME']} (ID: ${currentUser['ID number']})`;
+  await loadQuestions();
+  startAutoQuiz();
+};
+
+// --- Auto Quiz Logic ---
+async function startAutoQuiz() {
+  index = 0;
+  score = 0;
+  liveScore.textContent = `Score: ${score}`;
+  showAutoQuestion();
 }
 
-(async ()=>{
-  questions = await loadExcel();
-  answers = Array(questions.length).fill(null);
-  render();
-})();
+function showAutoQuestion() {
+  if (index >= questions.length) {
+    showResult();
+    return;
+  }
+
+  const q = questions[index];
+  quizContainer.style.opacity = 0;
+  setTimeout(() => {
+    questionEl.textContent = q.question;
+    choicesEl.innerHTML = ''; // remove buttons
+    quizContainer.style.opacity = 1;
+  }, 500);
+
+  setTimeout(() => {
+    index++;
+    showAutoQuestion();
+  }, 3000);
+}
+
+function showResult() {
+  quizContainer.style.opacity = 0;
+  setTimeout(() => {
+    questionEl.textContent = '✅ Quiz Completed!';
+    resultEl.textContent = `You viewed ${questions.length} questions.`;
+    quizContainer.style.opacity = 1;
+  }, 500);
+}
+
+window.onload = loadUsers;
