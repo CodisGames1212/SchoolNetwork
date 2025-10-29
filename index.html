@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Technology Quiz</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+  <div class="quiz-container">
+    <h1>Technology Quiz</h1>
+    <div id="questionBox">
+      <div id="questionText"></div>
+      <div id="choices"></div>
+    </div>
+    <div class="controls">
+      <button id="prevBtn">Previous</button>
+      <button id="nextBtn">Next</button>
+      <button id="submitBtn">Submit</button>
+    </div>
+    <div id="result" style="display:none;">
+      <h2>Your Score: <span id="scoreValue"></span></h2>
+      <p id="summaryText"></p>
+      <button id="restartBtn">Restart Quiz</button>
+    </div>
+  </div>
+  <script src="js/quiz.js"></script>
+</body>
+</html>
