@@ -1,42 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Tech Quiz App</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technology Quiz</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <!-- LOGIN VIEW -->
-    <div id="loginView" class="container">
-        <div>
-            <a href="https://john-luke-m-codis.itch.io/"><img id="logo" src="images/CodisLogo.png"></a>
-            <a href="https://www.facebook.com/share/1ABSEVe6jy/"><img id="logo" src="images/CTU.png"></a>
-        </div>
-        <h1>Tech Quiz Login</h1>
-        <input type="text" id="idNumber" placeholder="Enter ID Number">
-        <button id="loginBtn">Login</button>
+    <div id="loginView" class="view">
+      <div class="logo">
+        <a href="https://john-luke-m-codis.itch.io/"><img id="cg" src="images/CodisLogo.png"></a>
+        <a href="https://www.facebook.com/share/1ABSEVe6jy/"><img id="ctu" src="images/CTU.png"></a>
+      </div>
+      <h1>Login</h1>
+      <input type="text" id="idNumber" placeholder="Enter ID Number">
+      <button id="loginBtn">Login</button>
+  
+      <!-- Footer shown below the login form -->
+      <footer class="site-footer">
+        <br><br><br><hr><br>
+        <div>Developed using <a href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">ChatGPT</a></div>
+        <div>Powered By: <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+        <div>Copyright © 2025 <a href="https://john-luke-m-codis.itch.io/" target="_blank" rel="noopener noreferrer">Codis Games</a></div>
+        <div>All Rights Reserved</div>
+      </footer>
     </div>
+  
+  <div id="askView" class="view" style="display:none;">
+    <h1 id="welcomeAsk">Hi!</h1>
+    <p>Would you like to increase your time by answering random questions?</p>
+    <p>Every correct answer adds 1 minute to your current time.<br>Default time: 10 minutes</p>
+    <button id="startQuizBtn">Start Quiz</button>
+    <button id="exitBtn">Exit</button>
+  </div>
 
-    <!-- ASK VIEW -->
-    <div id="askView" class="container" style="display:none;">
-        <h2 id="welcomeAsk"></h2>
-        <p>Would you like to increase your time by answering random questions?</p>
-        <button id="startQuizBtn">Start Quiz</button>
-        <button id="exitBtn">Exit & Continue</button>
+  <div id="quizView" class="view" style="display:none;">
+    <p id="timer">Time: 10 min</p>
+    <div id="question-container">
+      <p id="question"></p>
+      <div id="answers"></div>
     </div>
+  </div>
 
-    <!-- QUIZ VIEW -->
-    <div id="quizView" class="container" style="display:none;">
-        <h2 id="welcomeQuiz"></h2>
-        <div id="timer">Time: 10 min</div>
-        <div id="question-container">
-            <p id="question">Loading questions...</p>
-            <div id="answers"></div>
-        </div>
-    </div>
-
-    <!-- SheetJS library -->
-    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
-    <script src="js/script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>

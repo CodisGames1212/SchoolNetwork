@@ -1,0 +1,96 @@
+What does CPU stand for?,Central Processing Unit,Computer Personal Unit,Central Power Unit,0
+What does GPU stand for?,Graphics Processing Unit,Graphical Performance Utility,General Processing Unit,0
+What does RAM stand for?,Random Access Memory,Read Access Memory,Run Access Mode,0
+What does ROM stand for?,Read Only Memory,Run Only Mode,Random Output Memory,0
+What is the brain of the computer?,CPU,Monitor,Keyboard,0
+Which company created Windows?,Microsoft,Apple,IBM,0
+Who founded Apple Inc.?,Steve Jobs,Bill Gates,Mark Zuckerberg,0
+What does HTML stand for?,Hyper Text Markup Language,Hyper Tool Markup Logic,Hyper Transfer Machine Language,0
+What does CSS stand for?,Cascading Style Sheets,Creative Style System,Computer Style Sheets,0
+What language is used to style web pages?,CSS,Python,HTML,0
+What language is used to structure web pages?,HTML,Java,Python,0
+What language is used for web interactivity?,JavaScript,PHP,CSS,0
+Which company developed Android?,Google,Apple,Samsung,0
+Which company developed iOS?,Apple,Google,Microsoft,0
+Which of these is a search engine?,Google,Facebook,Amazon,0
+Which of these is a social media site?,Facebook,Windows,Oracle,0
+What does URL stand for?,Uniform Resource Locator,Universal Reference Link,Unified Resource Link,0
+What does HTTP stand for?,Hyper Text Transfer Protocol,High Text Transmission Protocol,Hyper Transfer Text Process,0
+What does HTTPS stand for?,Hyper Text Transfer Protocol Secure,Hyper Transfer Text Protocol Safe,Hyper Transfer Terminal Secure,0
+What does LAN stand for?,Local Area Network,Large Access Node,Logical Array Network,0
+What does WAN stand for?,Wide Area Network,Web Access Network,Wireless Area Node,0
+What does Wi-Fi stand for?,Wireless Fidelity,Wide Frequency,Wireless Finder,0
+What does IP stand for?,Internet Protocol,Internal Port,Input Process,0
+What does DNS stand for?,Domain Name System,Data Network Service,Domain Network Server,0
+What does USB stand for?,Universal Serial Bus,United System Board,Universal Software Bridge,0
+What is the main function of an operating system?,Manage hardware and software,Play games,Connect to the internet,0
+What does AI stand for?,Artificial Intelligence,Automated Interface,Active Integration,0
+What does IoT stand for?,Internet of Things,Integration of Technology,Internet of Tools,0
+What does VPN stand for?,Virtual Private Network,Virtual Program Node,Visual Private Net,0
+What does SQL stand for?,Structured Query Language,Simple Query Language,System Query Logic,0
+Which company developed SQL?,IBM,Microsoft,Oracle,0
+Which company created the Java language?,Sun Microsystems,Oracle,Microsoft,0
+Which company owns YouTube?,Google,Facebook,Amazon,0
+Which company owns Instagram?,Meta,Google,Microsoft,0
+Which company owns WhatsApp?,Meta,Google,Amazon,0
+Which company owns LinkedIn?,Microsoft,Meta,IBM,0
+Which company created ChatGPT?,OpenAI,Google,IBM,0
+Which company created the Tesla electric car?,Tesla,SpaceX,Ford,0
+What does BIOS stand for?,Basic Input Output System,Binary Input Output Service,Basic Interface Operating System,0
+What does GUI stand for?,Graphical User Interface,General User Integration,Graph Unit Interface,0
+What does CLI stand for?,Command Line Interface,Central Logic Integration,Computer Line Input,0
+What is a computer virus?,Malicious software,Hardware component,Security firewall,0
+What is malware?,Malicious software,Hardware damage,Data backup tool,0
+What does URL contain?,Web address,Email address,Computer name,0
+What is phishing?,Stealing information through fake sites,Fixing network errors,Installing antivirus,0
+What is ransomware?,Software that locks files for payment,Free antivirus,Open source browser,0
+What is the main function of a firewall?,Block unauthorized access,Speed up Wi-Fi,Store passwords,0
+What is cloud computing?,Storing and accessing data online,Downloading data offline,Processing data locally,0
+What is an SSD?,Solid State Drive,Serial Storage Disk,Secure System Drive,0
+What is an HDD?,Hard Disk Drive,High Data Device,Hybrid Disk Driver,0
+What does API stand for?,Application Programming Interface,Automated Process Integration,Advanced Program Input,0
+What is an algorithm?,Set of instructions to solve a problem,Hardware tool,Data storage device,0
+What is debugging?,Finding and fixing code errors,Writing new code,Deleting files,0
+What is a compiler?,Translates code into machine language,Stores files,Runs browsers,0
+What is encryption?,Converting data to secure form,Deleting data,Copying data,0
+What is decryption?,Converting data back to readable form,Encrypting files,Deleting files,0
+What is Bluetooth used for?,Wireless short-range communication,Internet access,Charging devices,0
+What is GPS used for?,Location tracking,Data storage,Image processing,0
+What is a smartphone?,Mobile device with computing capabilities,Old telephone,Desktop computer,0
+What is the main function of a router?,Connects devices to the internet,Stores data,Prints documents,0
+What is a modem used for?,Connect to the internet,Store files,Send SMS,0
+What is 5G?,Fifth generation mobile network,Fifth graphics card,Five gigabytes of storage,0
+What is a QR code?,Quick Response Code,Quality Rating Code,Query Response Code,0
+What does PDF stand for?,Portable Document Format,Printable Data File,Public Document Form,0
+What does PNG stand for?,Portable Network Graphics,Public Network Graphics,Printed Network Graphic,0
+What does JPEG stand for?,Joint Photographic Experts Group,Java Photo Encoding Group,Joint Picture Editing Grid,0
+What is cybersecurity?,Protecting systems from attacks,Programming robots,Designing software,0
+What is data mining?,Extracting patterns from data,Storing files,Deleting data,0
+What is machine learning?,Teaching computers to learn patterns,Programming manually,Testing software,0
+What is big data?,Large complex data sets,Small databases,Old data files,0
+What is cloud storage?,Saving data on remote servers,Saving on USB,Saving on CD,0
+What is a bit?,Smallest unit of data,One byte,Computer chip,0
+What is a byte?,8 bits,4 bits,16 bits,0
+What does KB stand for?,Kilobyte,KiloBit,Kiloband,0
+What does MB stand for?,Megabyte,MegaBit,MemoryByte,0
+What does GB stand for?,Gigabyte,GigaBlock,GeneralByte,0
+What does TB stand for?,Terabyte,TeraBlock,TechByte,0
+What does AI chatbot mean?,Conversational AI software,Chatting robot toy,Command input tool,0
+What does AR stand for?,Augmented Reality,Artificial Reality,Advanced Rendering,0
+What does VR stand for?,Virtual Reality,Visual Rendering,Video Room,0
+What is 3D printing?,Creating objects layer by layer,Printing documents,Scanning in 3D,0
+What is robotics?,Study of robots and automation,Study of biology,Study of networks,0
+What is a microcontroller?,Small computer on a single chip,Large server,Keyboard input,0
+What is an Arduino?,Microcontroller platform,Programming language,Computer virus,0
+What is Raspberry Pi?,Small single-board computer,Fruit-shaped robot,Smartphone app,0
+What is a sensor?,Device that detects changes,Display monitor,Audio amplifier,0
+What is automation?,Performing tasks automatically,Manual control,Deleting data,0
+What is Ethernet?,Wired network connection,Wireless link,Storage device,0
+What is bandwidth?,Amount of data that can be transferred,Internet speed,File size,0
+What is latency?,Delay before data transfer,Internet speed,Storage size,0
+What is a database?,Organized collection of data,File folder,Operating system,0
+What does CRUD stand for?,Create Read Update Delete,Copy Run Upload Download,Code Reset Update Data,0
+What is a spreadsheet?,Grid for calculations,Image editor,Video player,0
+What is Excel used for?,Data analysis and calculations,Web browsing,Video editing,0
+What is PowerPoint used for?,Presentations,Photo editing,Programming,0
+What is Word used for?,Word processing,Image editing,Programming,0

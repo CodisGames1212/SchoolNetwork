@@ -1,59 +1,90 @@
-body, html {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #121212;
-  color: #e0e0e0;
+/* === TECHNOLOGY DARK THEME === */
+body {
+  background-color: #0d1117;
+  color: #e6edf3;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
   margin: 0;
 }
 
-.container {
-  text-align: center;
-  background: #1f1f1f;
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0,255,255,0.2);
-  width: 400px;
+h1, p {
+  color: #e6edf3;
+  text-shadow: 0 0 10px #00ffff33;
 }
 
-#logo {
-  width: 20%;
-  cursor: pointer;
-  border: none;
+.view {
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  min-height: 100vh;
 }
 
 input {
-  width: 80%;
   padding: 10px;
-  margin: 15px 0;
-  border-radius: 6px;
-  border: 1px solid #444;
-  background-color: #2b2b2b;
-  color: #e0e0e0;
+  border-radius: 8px;
+  border: none;
+  margin: 10px 0;
   text-align: center;
+  background-color: #161b22;
+  color: #e6edf3;
+  width: 200px;
 }
 
 button {
-  display: block;
-  margin: 10px auto;
-  padding: 10px 20px;
-  cursor: pointer;
-  border: none;
-  border-radius: 6px;
-  background-color: #00ffff;
-  color: #121212;
+  background: #1f2937;
+  color: #fff;
   font-weight: bold;
-  transition: 0.3s;
+  padding: 12px 25px;
+  margin: 10px;
+  border: 2px solid #00b4d8;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 10px #00b4d822;
 }
 
-button:hover { background-color: #00b3b3; }
+button:hover {
+  box-shadow: 0 0 15px #00b4d8;
+  transform: scale(1.05);
+}
 
-button.correct { background-color: #00ff00 !important; color: #121212; }
-button.wrong { background-color: #ff0000; color: #fff; }
+/* Glowing feedback */
+.correct {
+  background-color: #00ff88 !important;
+  color: #000 !important;
+  border-color: #00ff88 !important;
+  box-shadow: 0 0 20px #00ff88, 0 0 40px #00ff8844 !important;
+}
 
-#timer { font-size: 18px; margin-bottom: 20px; }
+.wrong {
+  background-color: #ff0044 !important;
+  color: #fff !important;
+  border-color: #ff0044 !important;
+  box-shadow: 0 0 20px #ff0044, 0 0 40px #ff004444 !important;
+}
 
-#question-container { text-align: center; }
+/* Center answers and make question larger */
+#answers button {
+  display: block;
+  width: 250px;
+  margin: 10px auto;
+}
+
+#question {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  transition: opacity 2s ease-in-out;
+}
+
+#answers {
+  opacity: 1;
+  transition: opacity 2s ease-in-out;
+}
+
+#cg, #ctu {
+  align-items: center;
+  width: 80px;
+}
