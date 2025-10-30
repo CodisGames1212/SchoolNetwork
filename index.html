@@ -1,42 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Technology Quiz Login</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Tech Quiz App</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-  <!-- LOGIN PAGE -->
-  <div id="login-container" class="quiz-container">
-    <h1>🔐 Login</h1>
-    <input type="text" id="idInput" placeholder="Enter your ID number" />
-    <button id="loginBtn">Login</button>
-    <p id="loginMessage"></p>
-  </div>
-
-  <!-- PROMPT PAGE -->
-  <div id="prompt-container" class="quiz-container" style="display:none;">
-    <h2>Would you like to increase your time by answering questions?</h2>
-    <p>Every correct answer increments your time by one!!!</p>
-    <div class="prompt-buttons">
-      <button id="exitBtn" class="exit">EXIT</button>
-      <button id="continueBtn" class="continue">CONTINUE</button>
+    <!-- LOGIN VIEW -->
+    <div id="loginView" class="container">
+        <div>
+            <a href="https://john-luke-m-codis.itch.io/"><img id="logo" src="images/CodisLogo.png"></a>
+            <a href="https://www.facebook.com/share/1ABSEVe6jy/"><img id="logo" src="images/CTU.png"></a>
+        </div>
+        <h1>Tech Quiz Login</h1>
+        <input type="text" id="idNumber" placeholder="Enter ID Number">
+        <button id="loginBtn">Login</button>
     </div>
-  </div>
 
-  <!-- QUIZ PAGE -->
-  <div id="quiz-container" class="quiz-container" style="display:none;">
-    <h1>🧠 Technology Quiz</h1>
-    <div id="userInfo"></div>
-    <div id="liveScore">Score: 0</div>
-    <div id="question"></div>
-    <div id="choices"></div>
-    <div id="result"></div>
-  </div>
+    <!-- ASK VIEW -->
+    <div id="askView" class="container" style="display:none;">
+        <h2 id="welcomeAsk"></h2>
+        <p>Would you like to increase your time by answering random questions?</p>
+        <button id="startQuizBtn">Start Quiz</button>
+        <button id="exitBtn">Exit & Continue</button>
+    </div>
 
-  <script src="js/quiz.js"></script>
+    <!-- QUIZ VIEW -->
+    <div id="quizView" class="container" style="display:none;">
+        <h2 id="welcomeQuiz"></h2>
+        <div id="timer">Time: 10 min</div>
+        <div id="question-container">
+            <p id="question">Loading questions...</p>
+            <div id="answers"></div>
+        </div>
+    </div>
+
+    <!-- SheetJS library -->
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
